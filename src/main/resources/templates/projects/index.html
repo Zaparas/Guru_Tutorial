@@ -5,6 +5,24 @@
     <title>Tech Clinic | Projects</title>
 </head>
 <body>
-    <h1 th:text="'List of Projects'"> here lies the list of projects</h1>
+<!--/*@thymesVar id"project" type="com.techclinic.guru_tutorial.model.Project"*/-->
+<h1 th:text="'List of Projects'"> here lies the list of projects</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Project Name</th>
+        <th>Start Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="project : ${projects}">
+        <td th:text="${project?.id}"> 999</td>
+        <td th:text="${project?.name}"> this one</td>
+        <td th:text="${project?.entryDate}"> 9/9/9</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

@@ -1,12 +1,13 @@
 package com.techclinic.guru_tutorial.services.map;
 
 import com.techclinic.guru_tutorial.model.Benefactor;
-import com.techclinic.guru_tutorial.model.Coworker;
-import com.techclinic.guru_tutorial.services.CrudService;
+import com.techclinic.guru_tutorial.services.BenefactorService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class BenefactorServiceMap extends AbstractMapService<Benefactor, Long> implements CrudService<Benefactor, Long> {
+@Service
+public class BenefactorServiceMap extends AbstractMapService<Benefactor, Long> implements BenefactorService{
 
     @Override
     public Set<Benefactor> findAll() {
@@ -20,7 +21,7 @@ public class BenefactorServiceMap extends AbstractMapService<Benefactor, Long> i
 
     @Override
     public Benefactor save(Benefactor object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

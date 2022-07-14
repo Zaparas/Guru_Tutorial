@@ -5,6 +5,26 @@
     <title>Tech Clinic | Corworkers</title>
 </head>
 <body>
+<!--/*@thymesVar id"coworker" type="com.techclinic.guru_tutorial.model.Coworker"*/-->
   <h1 th:text="'List of coworkers'"> Coworkers</h1>
+
+  <table>
+      <thead>
+      <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Specialty</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="coworker : ${coworkers}">
+          <td th:text="${coworker?.id}"> 999</td>
+          <td th:text="${coworker?.firstName}"> this one</td>
+          <td th:text="${coworker?.lastName}"> 9/9/9</td>
+          <td th:text="${coworker?.specialty}"> 9/9/9</td>
+      </tr>
+      </tbody>
+  </table>
 </body>
 </html>
